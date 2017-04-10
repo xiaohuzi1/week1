@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//1.编写一段数组去重代码要求至少使用两种方法
+		var arr = [1,6,23,45,23,6,100], //定义一个数组
+			sum = [],  //定义临时数组
+			res = [];
+		//第一种方法		
+		function quchong(num){
+			for(var i=0;i<num.length;i++){ //循环遍历numm
+				if(sum.indexOf(num[i])==-1){ //判断sum中是否存在此数
+					sum.push(num[i])  //若不存在，放入此数组
+				}
+			}
+			return sum
+		}
+		console.log(quchong(arr)) //控制台输出
+		//第二种方法
+		function paichong(num){
+			for(var i=num.length-1;i>=0;i--){ //循环遍历numm
+				if(res.indexOf(num[i])==-1){ //判断sum中是否存在此数
+					res.unshift(num[i])  //若不存在，放入此数组
+				}
+			}
+			return res
+		}
+		console.log(paichong(arr)) //控制台输出
+		
+	</script>
+</body>
+</html>
